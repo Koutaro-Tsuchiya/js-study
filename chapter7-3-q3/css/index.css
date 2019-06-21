@@ -1,0 +1,26 @@
+.carousel .carousel_items-wrap {
+  width: 600px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carousel .carousel_items {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    transform: translate(0px);
+    transition: transform .6s ease-out,-webkit-transform .6s ease-out;
+}
+
+.carousel .carousel_item {
+    display: block;
+    min-width: 480px;
+    min-height: 360px;
+    margin-left: 10px;
+    text-align: center;
+    background-color: silver;
+    line-height: 360px;
+    color: #fff;
+}

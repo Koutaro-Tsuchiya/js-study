@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>カルーセルを実装しよう</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- fontawaesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.0/css/all.css">
+  </head>
+  <body>
+    <main>
+      <h1>Carousel</h1>
+      <div class="carousel">
+        <!-- カルーセルボタン -->
+          <button type="button" class="carousel_prev js-prev">
+          <i class="fas fa-chevron-left"></i>
+          </button>
+          <button type="button" class="carousel_next js-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        <!-- カルーセルスライド -->
+        <div class="carousel_items-wrap">
+          <ul class="carousel_items js-carousel-items">
+            <li class="carousel_item js-item">0</li>
+            <li class="carousel_item js-item">1</li>
+            <li class="carousel_item js-item">2</li>
+            <li class="carousel_item js-item">3</li>
+            <li class="carousel_item js-item">4</li>
+            <li class="carousel_item js-item">5</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <!-- js -->
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>

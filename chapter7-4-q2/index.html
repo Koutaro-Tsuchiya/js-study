@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>電卓の実装</title>
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <table>
+      <tr>
+          <td class="display" colspan="4">
+          </td>
+      </tr>
+      <tr>
+          <td class="clear" onclick="calcuInit()">AC</td>
+          <td class="sign" onclick="calcuNegated()">+/-</td>
+          <td class="percent" onclick="calcuPercent()">%</td>
+          <td class="operator" value="divide" onclick="calcuRun('÷')">÷</td>
+      </tr>
+      <tr>
+          <td class="number" value="7" onclick="calcuInput('7')">7</td>
+          <td class="number" value="8" onclick="calcuInput('8')">8</td>
+          <td class="number" value="9" onclick="calcuInput('9')">9</td>
+          <td class="operator" value="multiple" onclick="calcuRun('×')">X</td>
+      </tr>
+      <tr>
+          <td class="number" value="4" onclick="calcuInput('4')">4</td>
+          <td class="number" value="5" onclick="calcuInput('5')">5</td>
+          <td class="number" value="6" onclick="calcuInput('6')">6</td>
+          <td class="operator" value="minus" onclick="calcuRun('-')">-</td>
+      </tr>
+      <tr>
+          <td class="number" value="1" onclick="calcuInput('1')">1</td>
+          <td class="number" value="2"
+          onclick="calcuInput('2')">2</td>
+          <td class="number" value="3"
+          onclick="calcuInput('3')">3</td>
+          <td class="operator" value="plus" onclick="calcuRun('+')">+</td>
+      </tr>
+      <tr>
+          <td class="number" value="0" colspan="2" onclick="calcuInput(0)">0</td>
+          <td class="dot" onclick="calcuInput('.')">.</td>
+          <td class="equal" onclick="calcuEqual('=')">=</td>
+      </tr>
+    </table>
+  <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>

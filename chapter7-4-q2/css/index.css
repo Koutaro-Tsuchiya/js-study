@@ -1,0 +1,53 @@
+body {
+    background: white;
+    font-family:'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    font-size: 26px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+table td {
+    text-align: center;
+    width: 72px;
+    height: 72px;
+    border: 1px solid black;
+    padding: 0px;
+}
+
+.display {
+    text-align: right;
+    color: white;
+    font-size: 45px;
+    background-color: black;
+    letter-spacing: 5px;
+}
+
+.clear, .sign, .percent {
+    color: black;
+    background-color: rgb(195, 195, 195);
+}
+
+.clear:hover, .sign:hover, .percent:hover {
+    background-color: rgb(175, 175, 175);
+}
+
+.operator {
+    color: white;
+    background-color: rgb(255, 155, 0);
+}
+
+.operator:hover {
+    background-color: rgb(255, 135, 0);
+}
+
+.number {
+    color: black;
+    background-color: rgb(235, 235, 235);
+}
+
+.number:hover {
+    background-color: rgb(215, 215, 215);
+}

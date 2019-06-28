@@ -1,49 +1,49 @@
 let ans = 0;  //計算結果
 let tmp = 0;  //前回の計算を取得
 let key = "";　//演算子の取得
-let keytmp = "";　//１つ前の演算子の取得
-let Display = document.querySelector('.display');
+let keyTmp = "";　//１つ前の演算子の取得
+let display = document.querySelector('.display');
 
 // 「数字」「.」を押した場合
-function calcuInput(btn) {
+function calcInput(btn) {
     // ここの挙動が不明
     if (btn == '.') {
-        if (Display.innerText.match(new RegExp("\\.")) != null) return 0;
+        if (display.innerText.match(new RegExp("\\.")) != null) return;
     }
     //演算子が既に入力されていた場合
-    if (keytmp != "")vDisplayClea();
+    if (keyTmp != "")displayClear();
     //入力された数字を表示
     //1回目の数字の入力はここに飛ぶ
-    Display.innerText = Display.innerText + btn;
+    display.innerText = display.innerText + btn;
 }
 
 //数字の入力が行われた時に演算子が既に入力されているタイミングで表示画面の値をクリア
-function vDisplayClea() {
+function displayClear() {
   document.querySelector('.display').innerText = "";
-  keytmp = "";
+  keyTmp = "";
 }
 
 //演算子が押された場合
-function calcuRun(keyinp) {
+function calcRun(keyInp) {
     //tmpに数字を保存
-    tmp = Display.innerHTML;
+    tmp = display.innerHTML;
     //keyに演算子が入っている場合
     if (key != "") {
         ans = calcAny(ans, tmp, key);
         tmp = 0;
-        Display.innerText = ans * 1;
+        display.innerText = ans * 1;
     }
     // 「＝」を押した場合
-    if (keyinp == '='){
+    if (keyInp == '='){
       key = "";
-      keytmp = "";
+      keyTmp = "";
       ans = "";
     }
     // １回目の演算子の入力はここに飛ぶ
     // keyに前回押した演算子を保存
     else {
-      key = keyinp;
-      keytmp = keyinp;
+      key = keyInp;
+      keyTmp = keyInp;
       //計算結果
       ans += tmp * 1;
     }
@@ -57,7 +57,7 @@ function calcAny(ans, tmp, key) {
 }
 
 // ACを押した場合
-function calcuInit() {
+function calcInit() {
   document.querySelector('.display').innerText = "";
   ans = 0;
   tmp = 0;
@@ -65,13 +65,13 @@ function calcuInit() {
 }
 
 // +/-を押した場合
-function calcuNegated() {
-    Display.innerText = Display.innerHTML * -1;
-    tmp = Display.innerHTML;
+function calcNegated() {
+    display.innerText = display.innerHTML * -1;
+    tmp = display.innerHTML;
 }
 
 // %を押した場合
-function calcuPercent() {
-    Display.innerText = Display.innerHTML * 0.01;
-    tmp = Display.innerHTML;
+function calcPercent() {
+    display.innerText = display.innerHTML * 0.01;
+    tmp = display.innerHTML;
 }

@@ -10,65 +10,18 @@ class Calculator {
     this.clear = document.querySelector('.clear')
     this.sign = document.querySelector('.sign')
     this.percent = document.querySelector('.percent')
-    this.calcAny = ()=>{
-      if (this.key == '+') { return parseInt(this.ans) + parseInt(this.tmp) }
-      if (this.key == '-') { return parseInt(this.ans)  - parseInt(this.tmp)}
-      if (this.key == '×') { return parseInt(this.ans) * parseInt(this.tmp) }
-      if (this.key == '÷') { return parseInt(this.ans)  / parseInt(this.tmp) }
-    }
   }
 
   calc() {
 
-    this.number.forEach(index => {
-      index.addEventListener('click', () => {
-        if(index.innerText == "."){
-          if(this.display.innerText.match(new RegExp("\\.")) != null){
-            return;
-          }
-          if(this.display.innerText == ""){
-            this.display.innerText = 0;
-          }
-        }
-        //演算子が既に入力されていた場合
-        if (this.keyTmp != ""){
-          this.display.innerText = "";
-          this.keyTmp = "";
-        }
-        //入力された数字を表示
-        //1回目の数字の入力はここに飛ぶ
-        this.display.innerText += index.innerText;
-      });
-    });
-
+    this.number.forEach(dom => {
+      dom.addEventListener('click', () => this.calcNum(dom))
+    })
 
     //演算子が押された場合
-    this.operator.forEach(index => {
-      index.addEventListener('click', () => {
-        //tmpに数字を保存
-        this.tmp = this.display.innerText;
-        //keyに演算子が入っている場合
-        if (this.key != "") {
-          this.ans = this.calcAny();
-          this.tmp = 0;
-          this.display.innerText = this.ans;
-        }
-        // 「＝」を押した場合
-        if (index.innerText == '='){
-          this.key = "";
-          this.keyTmp = "";
-          this.ans = "";
-        }
-        // １回目の演算子の入力はここに飛ぶ
-        // keyに前回押した演算子を保存
-        else {
-          this.key = index.innerText;
-          this.keyTmp = index.innerText;
-          //計算結果
-          this.ans += this.tmp;
-        }
-      });
-    });
+    this.operator.forEach(dom => {
+      dom.addEventListener('click', () => this.calcOpe(dom))
+    })
 
 
     // ACを押した場合
@@ -91,12 +44,65 @@ class Calculator {
       this.tmp = this.display.innerHTML;
     });
 
+
+  }
+
+  calcAny () {
+    if (this.key == '+') { return parseInt(this.ans) + parseInt(this.tmp) }
+    if (this.key == '-') { return parseInt(this.ans)  - parseInt(this.tmp)}
+    if (this.key == '×') { return parseInt(this.ans) * parseInt(this.tmp) }
+    if (this.key == '÷') { return parseInt(this.ans)  / parseInt(this.tmp) }
+  }
+
+  calcNum (dom) {
+    if(dom.innerText == "."){
+      if(this.display.innerText.match(new RegExp("\\.")) != null){
+        return;
+      }
+      if(this.display.innerText == ""){
+        this.display.innerText = 0;
+      }
+    }
+    //演算子が既に入力されていた場合
+    if (this.keyTmp != ""){
+      this.display.innerText = "";
+      this.keyTmp = "";
+    }
+    //入力された数字を表示
+    //1回目の数字の入力はここに飛ぶ
+    this.display.innerText += dom.innerText;
+  }
+
+  calcOpe (dom) {
+    //tmpに数字を保存
+    this.tmp = this.display.innerText;
+    //keyに演算子が入っている場合
+    if (this.key != "") {
+      this.ans = this.calcAny();
+      this.tmp = 0;
+      this.display.innerText = this.ans;
+    }
+    // 「＝」を押した場合
+    if (dom.innerText == '='){
+      this.key = "";
+      this.keyTmp = "";
+      this.ans = "";
+    }
+    // １回目の演算子の入力はここに飛ぶ
+    // keyに前回押した演算子を保存
+    else {
+      this.key = dom.innerText;
+      this.keyTmp = dom.innerText;
+      //計算結果
+      this.ans += this.tmp;
+    }
   }
 
 }
 
 const calculator = new Calculator()
 calculator.calc()
+
 
 
 

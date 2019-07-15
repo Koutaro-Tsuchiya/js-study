@@ -2,29 +2,27 @@ extends /layout/_application
 block content
   - var omission = "See more...";
   header.header
-    .short-button: img(src="images/menu.svg")
-    ul.left-link
-      li.link-item: a(href="#") WORKS
-      li.link-item: a(href="#") ABOUT
-    .header-img
-      img(src="images/avatar.png")
-    ul.right-link
-      li.link-item: a(href="#") LINKS
-      li.link-item: a(href="#") CONTACTS
+    .toggle-btn: a(href="#"): img(src="../images/menu.svg")
+    .header-item.header-img: img(src="../images/avatar.png")
+    ul.link-menu
+        li.header-item.link-item: a(href="#") WORKS
+        li.header-item.link-item: a(href="#") ABOUT
+        li.header-item.link-item: a(href="#") LINKS
+        li.header-item.link-item: a(href="#") CONTACTS
   .top
     h1 Motivation Is The First
       br
       | Step To
       span.while  Success
     ul.socials
-      li.social-item: a(href="#"): img(src="images/twitter.svg")
-      li.social-item: a(href="#"): img(src="images/be.svg")
-      li.social-item: a(href="#"): img(src="images/insta.svg")
+      li.social-item: a(href="#"): img(src="../images/twitter.svg")
+      li.social-item: a(href="#"): img(src="../images/be.svg")
+      li.social-item: a(href="#"): img(src="../images/insta.svg")
   .works
     p.mark WORKS
     .post-wrapper
       .post
-        .post-img: img(src="images/works1.png")
+        .post-img: img(src="../images/works1.png")
         .featured-txt
           p Featured
           h3
@@ -32,7 +30,7 @@ block content
             br
             | Step To Success
       .post
-        .post-img: img(src="images/works2.png")
+        .post-img: img(src="../images/works2.png")
         .post-txt
           h3
            | How Great Is The Strength
@@ -40,7 +38,7 @@ block content
            | Of Your Belif
     .post-wrapper
       .post
-        .post-img: img(src="images/works3.png")
+        .post-img: img(src="../images/works3.png")
         .post-txt
           h3
            | Benjamin Franklin S
@@ -49,13 +47,13 @@ block content
            br.brpc
            |  Formation
       .post
-        .post-img: img(src="images/works4.png")
+        .post-img: img(src="../images/works4.png")
         .featured-txt
           p Feature
           h3
            | Increasing Prosperity
            br.brsp
-           | With
+           |  With
            br.brpc
            |  Positive Thinking
   .about
@@ -76,9 +74,9 @@ block content
         p Personally, the importance does not lie in what religion you are; however, a lack of religion does seem to run parallel with depression. #[span.spanpc This is classified as spiritual illness, which will have a negative effect on you mentally, physically, or totally.]#[span.spansp  #{omission}]
   .conect
     ul.conect-wrapper
-      li.conect-item: img(src="images/google.svg")
-      li.conect-item: img(src="images/airbnb.svg")
-      li.conect-item: img(src="images/dropbox.svg")
+      li.conect-item: img(src="../images/google.svg")
+      li.conect-item: img(src="../images/airbnb.svg")
+      li.conect-item: img(src="../images/dropbox.svg")
   .links
     p.mark.mark-links LINKS
     .line-wrapper
@@ -109,9 +107,9 @@ block content
       .contact-info
         p Positive pleasure-oriented goals are much more powerful motivators than negative fear-based ones.
         ul.socials
-          li.social-item: a(href="#"): img(src="images/twitter.svg")
-          li.social-item: a(href="#"): img(src="images/be.svg")
-          li.social-item: a(href="#"): img(src="images/insta.svg")
+          li.social-item: a(href="#"): img(src="../images/twitter.svg")
+          li.social-item: a(href="#"): img(src="../images/be.svg")
+          li.social-item: a(href="#"): img(src="../images/insta.svg")
       .contact-form
         form
           .form-group
@@ -124,7 +122,7 @@ block content
             label MESSAGE
             textarea(name="message" rows="6" cols="80" placeholder="Your question or suggestion" class="form-control")
       .form-btn
-        input(type="image" name="submit" src="images/dropbox.svg")
+        input(type="image" name="submit" src="../images/dropbox.svg")
   footer.footer
     p.copyright Copyright © 2018 Denis Abdullin – deab.ru
     p.footer-info Invoicing

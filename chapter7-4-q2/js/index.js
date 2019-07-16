@@ -12,13 +12,13 @@ class Calculator {
     this.percent = document.querySelector('.percent')
     this.int=()=>{
       // 数値が押された場合
-      this.number.forEach(input => {
-        input.addEventListener('click',()=>this.onNumber(input))
+      this.number.forEach(element => {
+        element.addEventListener('click',()=>this.onNumber(element))
       })
 
       //演算子が押された場合
-      this.operator.forEach(input => {
-        input.addEventListener('click', ()=>this.onOperator(input))
+      this.operator.forEach(element => {
+        element.addEventListener('click', ()=>this.onOperator(element))
       })
 
       // ACを押した場合
@@ -36,10 +36,10 @@ class Calculator {
         this.tmp = this.display.innerHTML;
       });
     }
-  }
 
-  onNumber=(input)=>{
-    if(input.innerText == "."){
+  }
+  onNumber=(element)=>{
+    if(element.innerText == "."){
       if(this.display.innerText.match(new RegExp("\\.")) != null){
         return;
       }
@@ -54,10 +54,10 @@ class Calculator {
     }
     //入力された数字を表示
     //1回目の数字の入力はここに飛ぶ
-    this.display.innerText += input.innerText;
+    this.display.innerText += element.innerText;
   }
 
-  onOperator=(input)=>{
+  onOperator=(element)=>{
     //tmpに数字を保存
     this.tmp = this.display.innerText;
     //keyに演算子が入っている場合
@@ -67,7 +67,7 @@ class Calculator {
       this.display.innerText = this.ans;
     }
     // 「＝」を押した場合
-    if (input.innerText == '='){
+    if (element.innerText == '='){
       this.key = "";
       this.keyTmp = "";
       this.ans = "";
@@ -75,8 +75,8 @@ class Calculator {
     // １回目の演算子の入力はここに飛ぶ
     // keyに前回押した演算子を保存
     else {
-      this.key = input.innerText;
-      this.keyTmp = input.innerText;
+      this.key = element.innerText;
+      this.keyTmp = element.innerText;
       //計算結果
       this.ans += this.tmp;
     }

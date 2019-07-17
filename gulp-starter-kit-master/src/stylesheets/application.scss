@@ -111,9 +111,10 @@ body {
     position: relative;
   }
   .header-img {
-    text-align: center;
+    margin: 0 auto;
     position: relative;
     top: 50px;
+    width: 52px;
     @include mq() {
       top: 0;
     }
@@ -131,29 +132,6 @@ body {
     list-style: none;
     @include mq() {
       display: none;
-    }
-    .link-item {
-      font-size: 12px;
-      letter-spacing: 3px;
-      font-weight: 600;
-      &:nth-child(2) {
-        position: relative;
-        right: 200px;
-      }
-      &:nth-child(3) {
-        position: relative;
-        left: 210px;
-      }
-      a {
-        text-decoration: none;
-        color: $main_color;
-      }
-    }
-  }
-  @include mq() {
-    // ハンバーガーメニューを押した時の挙動
-    .link-menu.open,
-    .link-menu.close {
       display: inline;
       position: absolute;
       width: 80%;
@@ -161,14 +139,40 @@ body {
       background: rgba(88,87,86,1);
       top: 100px;
       z-index: 1;
-      .link-item {
+      animation-duration: 0.5s;
+      animation-name: fade-out;
+      animation-fill-mode:forwards;
+    }
+    .link-item {
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 600;
+      @include mq() {
         display: block;
         position: static;
         border-bottom: 1px solid #9F99A3;
         font-size: 22px;
         padding: 15px;
         margin: 0;
-        a {
+      }
+      &:nth-child(2) {
+        position: relative;
+        right: 200px;
+        @include mq() {
+          position: static;
+        }
+      }
+      &:nth-child(3) {
+        position: relative;
+        left: 210px;
+        @include mq() {
+          position: static;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $main_color;
+        @include mq() {
           color: white;
           &:hover{
             color: $main_color;
@@ -176,15 +180,11 @@ body {
         }
       }
     }
-    .link-menu.open {
-      animation-duration: 0.5s;
-      animation-name: fade-in;
-    }
-    .link-menu.close {
-      animation-duration: 0.5s;
-      animation-name: fade-out;
-      animation-fill-mode:forwards;
-      }
+  }
+  [data-opened="1"] {
+    display: inline;
+    animation-duration: 0.5s;
+    animation-name: fade-in;
   }
   .toggle-btn {
     display: none;

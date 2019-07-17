@@ -1,14 +1,17 @@
 const toggleBtn = document.querySelector('.toggle-btn');
-let linkMenu = document.querySelectorAll('.link-menu');
+const linkMenu = document.querySelector('.link-menu');
+const linkItem = document.querySelectorAll(".link-item")
 
-linkMenu.forEach(element => {
   toggleBtn.addEventListener('click', ()=>{
-    if(element.classList.contains('open')) {
-      element.classList.remove('open');
-      element.classList.add('close');
+    if(linkMenu.dataset.opened=="0") {
+      linkMenu.setAttribute("data-opened", "1");
     } else {
-      element.classList.remove('close');
-      element.classList.add('open');
+      linkMenu.setAttribute("data-opened", "0");
     }
+  })
+
+  linkItem.forEach(element => {
+  element.addEventListener('click', ()=>{
+    linkMenu.setAttribute("data-opened", "0");
   })
 })

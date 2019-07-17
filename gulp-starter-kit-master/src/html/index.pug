@@ -4,11 +4,11 @@ block content
   header.header
     .toggle-btn: a(href="#"): img(src="../images/menu.svg")
     .header-item.header-img: img(src="../images/avatar.png")
-    ul.link-menu
-        li.header-item.link-item: a(href="#") WORKS
-        li.header-item.link-item: a(href="#") ABOUT
-        li.header-item.link-item: a(href="#") LINKS
-        li.header-item.link-item: a(href="#") CONTACTS
+    ul.link-menu(data-opened="0")
+        li.header-item.link-item: a(href="#section1") WORKS
+        li.header-item.link-item: a(href="#section2") ABOUT
+        li.header-item.link-item: a(href="#section3") LINKS
+        li.header-item.link-item: a(href="#section4") CONTACTS
   .top
     h1 Motivation Is The First
       br
@@ -18,7 +18,7 @@ block content
       li.social-item: a(href="#"): img(src="../images/twitter.svg")
       li.social-item: a(href="#"): img(src="../images/be.svg")
       li.social-item: a(href="#"): img(src="../images/insta.svg")
-  .works
+  .works#section1
     p.mark WORKS
     .post-wrapper
       .post
@@ -56,7 +56,7 @@ block content
            |  With
            br.brpc
            |  Positive Thinking
-  .about
+  .about#section2
     p.mark ABOUT
     .about-article
       .article-item
@@ -74,10 +74,10 @@ block content
         p Personally, the importance does not lie in what religion you are; however, a lack of religion does seem to run parallel with depression. #[span.spanpc This is classified as spiritual illness, which will have a negative effect on you mentally, physically, or totally.]#[span.spansp  #{omission}]
   .conect
     ul.conect-wrapper
-      li.conect-item: img(src="../images/google.svg")
-      li.conect-item: img(src="../images/airbnb.svg")
+      li.conect-item: img(src="/images/google.svg")
+      li.conect-item: img(src="../../images/airbnb.svg")
       li.conect-item: img(src="../images/dropbox.svg")
-  .links
+  .links#section3
     p.mark.mark-links LINKS
     .line-wrapper
       .line
@@ -101,7 +101,7 @@ block content
       .line
         a(href="#") Self Motivation How To Keep Yourself Motivated
         span  2016
-  .contacts
+  .contacts#section4
     h2 Contacts
     .contact-parts
       .contact-info

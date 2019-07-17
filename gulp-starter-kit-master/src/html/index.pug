@@ -1,0 +1,129 @@
+extends /layout/_application
+block content
+  - var omission = "See more...";
+  header.header
+    .toggle-btn: a(href="#"): img(src="../images/menu.svg")
+    .header-item.header-img: img(src="../images/avatar.png")
+    ul.link-menu(data-opened="0")
+        li.header-item.link-item: a(href="#section1") WORKS
+        li.header-item.link-item: a(href="#section2") ABOUT
+        li.header-item.link-item: a(href="#section3") LINKS
+        li.header-item.link-item: a(href="#section4") CONTACTS
+  .top
+    h1 Motivation Is The First
+      br
+      | Step To
+      span.while  Success
+    ul.socials
+      li.social-item: a(href="#"): img(src="../images/twitter.svg")
+      li.social-item: a(href="#"): img(src="../images/be.svg")
+      li.social-item: a(href="#"): img(src="../images/insta.svg")
+  .works#section1
+    p.mark WORKS
+    .post-wrapper
+      .post
+        .post-img: img(src="../images/works1.png")
+        .featured-txt
+          p Featured
+          h3
+            | Motivation Is The First
+            br
+            | Step To Success
+      .post
+        .post-img: img(src="../images/works2.png")
+        .post-txt
+          h3
+           | How Great Is The Strength
+           br
+           | Of Your Belif
+    .post-wrapper
+      .post
+        .post-img: img(src="../images/works3.png")
+        .post-txt
+          h3
+           | Benjamin Franklin S
+           br
+           | Method Of Habit
+           br.brpc
+           |  Formation
+      .post
+        .post-img: img(src="../images/works4.png")
+        .featured-txt
+          p Feature
+          h3
+           | Increasing Prosperity
+           br.brsp
+           |  With
+           br.brpc
+           |  Positive Thinking
+  .about#section2
+    p.mark ABOUT
+    .about-article
+      .article-item
+        h2 UX/UI
+        p Of course, motivation really isn’t #[span.while simple at all.] That is why there is multi-billion industry focused on self-help books, tapes, seminars, camps, and coaches.
+      .article-item
+        h2 Motion
+        p As humans, we have progressed in so many ways, but we have lost touch with our bodies, nature, and the power of prayer.#[span.spanpc There seems to be a spiritual renaissance, of sorts, going on in the “new age” movement.]#[span.spansp  #{omission}]
+    .about-article
+      .article-item
+        h2 Branding
+        p If at anytime, you notice that a friend of yours is getting demotivated about life, try to inspire him/her as much as you can. #[span.spanpc Even if you are physically away from your friend you can send him inspirational ecards and tell him to download motivational screensavers and wallpapers. So motivate everyone who needs the boost. ]#[span.spansp  #{omission}]
+      .article-item
+        h2 Development
+        p Personally, the importance does not lie in what religion you are; however, a lack of religion does seem to run parallel with depression. #[span.spanpc This is classified as spiritual illness, which will have a negative effect on you mentally, physically, or totally.]#[span.spansp  #{omission}]
+  .conect
+    ul.conect-wrapper
+      li.conect-item: img(src="/images/google.svg")
+      li.conect-item: img(src="../../images/airbnb.svg")
+      li.conect-item: img(src="../images/dropbox.svg")
+  .links#section3
+    p.mark.mark-links LINKS
+    .line-wrapper
+      .line
+        a(href="#") Harness The Power Of Words In Your Life
+        span  2018
+      .line
+        a(href="#") A Starter Guide To Self Improvement
+        span  2018
+      .line
+        a(href="#") Benjamin Franklin S Method Of Habit Formation
+        span  2018
+      .line
+        a(href="#") Does Your Life Lack Meaning
+        span  2018
+      .line
+        a(href="#") Hypnotize Yourself Into The Ghost Of Christmas Future
+        span  2017
+      .line
+        a(href="#") Hypnotize Yourself Into The Ghost Of Christmas Future
+        span  2018
+      .line
+        a(href="#") Self Motivation How To Keep Yourself Motivated
+        span  2016
+  .contacts#section4
+    h2 Contacts
+    .contact-parts
+      .contact-info
+        p Positive pleasure-oriented goals are much more powerful motivators than negative fear-based ones.
+        ul.socials
+          li.social-item: a(href="#"): img(src="../images/twitter.svg")
+          li.social-item: a(href="#"): img(src="../images/be.svg")
+          li.social-item: a(href="#"): img(src="../images/insta.svg")
+      .contact-form
+        form
+          .form-group
+            label NAME
+            input(type="text" name="name" class="form-control" placeholder="Incognito")
+          .form-group
+            label E-Mail
+            input(type="text" name="mail" placeholder="incognito@gmail.com" class="form-control")
+          .form-group
+            label MESSAGE
+            textarea(name="message" rows="6" cols="80" placeholder="Your question or suggestion" class="form-control")
+      .form-btn
+        input(type="image" name="submit" src="../images/dropbox.svg")
+  footer.footer
+    p.copyright Copyright © 2018 Denis Abdullin – deab.ru
+    p.footer-info Invoicing
+    p.footer-info Document

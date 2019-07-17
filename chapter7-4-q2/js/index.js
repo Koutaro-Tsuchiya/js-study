@@ -7,38 +7,39 @@ class Calculator {
     this.display = document.querySelector('.display');
     this.number = document.querySelectorAll('.number');
     this.operator = document.querySelectorAll('.operator');
-    this.clear = document.querySelector('.clear')
-    this.sign = document.querySelector('.sign')
-    this.percent = document.querySelector('.percent')
-    this.int=()=>{
-      // 数値が押された場合
-      this.number.forEach(element => {
-        element.addEventListener('click',()=>this.onNumber(element))
-      })
-
-      //演算子が押された場合
-      this.operator.forEach(element => {
-        element.addEventListener('click', ()=>this.onOperator(element))
-      })
-
-      // ACを押した場合
-      this.clear.addEventListener('click', this.onClear);
-
-      // +/-を押した場合
-      this.sign.addEventListener('click',()=>{
-        this.display.innerText = this.display.innerHTML * -1;
-        this.tmp = this.display.innerHTML;
-      });
-
-      // %を押した場合
-      this.percent.addEventListener('click',()=>{
-        this.display.innerText = this.display.innerHTML * 0.01;
-        this.tmp = this.display.innerHTML;
-      });
-    }
-
+    this.clear = document.querySelector('.clear');
+    this.sign = document.querySelector('.sign');
+    this.percent = document.querySelector('.percent');
+    this.init();
   }
-  onNumber=(element)=>{
+
+  init() {
+    // 数値が押された場合
+    this.number.forEach(element => {
+      element.addEventListener('click',()=>this.onNumber(element))
+    })
+
+    //演算子が押された場合
+    this.operator.forEach(element => {
+      element.addEventListener('click', ()=>this.onOperator(element))
+    })
+
+    // ACを押した場合
+    this.clear.addEventListener('click', this.onClear);
+
+    // +/-を押した場合
+    this.sign.addEventListener('click',()=>{
+      this.display.innerText = this.display.innerHTML * -1;
+      this.tmp = this.display.innerHTML;
+    });
+
+    // %を押した場合
+    this.percent.addEventListener('click',()=>{
+      this.display.innerText = this.display.innerHTML * 0.01;
+      this.tmp = this.display.innerHTML;
+    });
+  }
+  onNumber(element) {
     if(element.innerText == "."){
       if(this.display.innerText.match(new RegExp("\\.")) != null){
         return;
@@ -57,7 +58,7 @@ class Calculator {
     this.display.innerText += element.innerText;
   }
 
-  onOperator=(element)=>{
+  onOperator(element) {
     //tmpに数字を保存
     this.tmp = this.display.innerText;
     //keyに演算子が入っている場合
@@ -82,14 +83,14 @@ class Calculator {
     }
   }
 
-  onClear=()=>{
+  onClear() {
     this.display.innerText = "";
     this.ans = 0;
     this.tmp = 0;
     this.key = "";
   }
 
-  calcRun=()=>{
+  calcRun() {
     if (this.key == '+') { return parseInt(this.ans) + parseInt(this.tmp) }
     if (this.key == '-') { return parseInt(this.ans)  - parseInt(this.tmp)}
     if (this.key == '×') { return parseInt(this.ans) * parseInt(this.tmp) }
@@ -98,5 +99,4 @@ class Calculator {
 
 }
 
-const calculator = new Calculator()
-calculator.int()
+const calculator = new Calculator

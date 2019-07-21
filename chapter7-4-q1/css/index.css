@@ -1,0 +1,66 @@
+@import "compass/reset";
+
+body {
+    background: #e3e3e3;
+    -webkit-user-select: none;
+}
+
+.counter {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
+    border-radius: 15px;
+    width: 280px; height: 190px;
+    background: #a3a3a3;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .8);
+}
+
+.console {
+    box-sizing: border-box;
+    margin: 20px auto 0;
+    padding: 20px 20px;
+    border-radius: 15px;
+    width: 240px;
+    color: #3e3e3e;
+    font: 20px AvenirNext-Heavy;
+    text-align: right;
+    background: #e3e3e3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .8) inset;
+}
+
+/* 追加 */
+.inner{
+  display: flex;
+  list-style: none;
+  padding: 0;
+  line-height: 20px;
+  position: absolute;
+  bottom: -20px;
+}
+
+.btn {
+    float: left;
+    margin: 20px;
+    border-radius: 5px;
+    width: 100px; height: 60px;
+    color: #e3e3e3;
+    font: 16px AvenirNext-Heavy;
+    line-height: 60px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5) inset;
+}
+
+.down {
+    background: #00B0FF;
+}
+
+.up {
+    background: #F50057;
+}

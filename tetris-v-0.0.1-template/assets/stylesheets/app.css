@@ -1,0 +1,18 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#wrapper{
+  width: 240px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+canvas {
+  /* width: 640px; */
+  /* height: 320px; */
+}

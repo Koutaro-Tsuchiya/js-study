@@ -1,0 +1,48 @@
+body {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  background: #026aa7;
+  padding: 5px;
+  .header_menu {
+    list-style: none;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    .header_item .header_link {
+      text-decoration: none;
+      color: #fff;
+    }
+    .header_title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+  .listNew {
+    position: absolute;
+    right: 0;
+    &:after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f044";
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 20px;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+.main_top {
+    min-height: 93vh;
+    padding-top: 30px;
+    background: #bababa;
+    overflow-x: scroll;
+    .homeWrapper {
+      display: flex;
+      height: 100%;
+      align-items: baseline;
+    }
+}

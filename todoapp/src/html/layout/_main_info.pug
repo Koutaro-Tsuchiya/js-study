@@ -1,0 +1,19 @@
+.cardnewPgae
+    form.cardnewForm
+    .container
+      #login-form
+        .cardnewForm_parts
+          .form_title タイトル
+          input(v-model="title" placeholder="タイトル" type="text")
+        .cardnewForm_parts
+          .form_title 内容
+          textarea(v-model="memo" placeholder="メモ")
+
+        .cardnewForm_parts
+          .form_title 期限
+          input.short_form(v-model="start" placeholder="開始時間")
+          input.short_form(v-model="start" placeholder="終了時間")
+          input.short_form(v-model="start" placeholder="アラーム")
+
+        .text-center
+          button(v-on:click="createUser").submitBtn 作成

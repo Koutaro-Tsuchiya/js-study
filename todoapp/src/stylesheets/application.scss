@@ -34,15 +34,127 @@ body {
   }
 }
 
-// --------------------------------------------------------------------------
-.main_top {
-    min-height: 93vh;
-    padding-top: 30px;
-    background: #bababa;
-    overflow-x: scroll;
-    .homeWrapper {
-      display: flex;
-      height: 100%;
-      align-items: baseline;
-    }
+// ---------------------------------------------------------------
+.topPage {
+  min-height: 93vh;
+  padding-top: 30px;
+  background: #bababa;
+  overflow-x: scroll;
+}
+
+.topPage .listWrapper {
+    display: flex;
+    height: 100%;
+    align-items: baseline;
+}
+
+.topPage .listWrapper .list {
+    position: relative;
+    background: #e2e4e6;
+    padding: 10px;
+    margin-left: 40px;
+    min-width: 250px;
+}
+
+.topPage .listWrapper .list_header {
+    margin-bottom: 20px;
+}
+
+.topPage .listWrapper .list_header_title {
+    font-size: 20px;
+    margin: 0;
+}
+
+.topPage .listWrapper .fa-play-circle,
+.topPage .listWrapper .fa-trash {
+    font-size: 18px;
+    color: #8c8c8c;
+}
+
+.cardWrapper .cardDetail_link {
+    color: #323232;
+}
+
+.topPage .listWrapper .list .cardWrapper .card {
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topPage .listWrapper .list .cardWrapper .card_title {
+    font-size: 17px;
+}
+
+.one_row,
+.two_row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topPage .listWrapper .list .cardWrapper .card_time {
+    font-size: 17px;
+}
+
+.cardWrapper .fa-trash,
+.cardWrapper .fa-pen {
+  font-size: 18px;
+  color: #8c8c8c;
+  display: inline-block;
+}
+
+// ---------------------------------------------------------------
+.cardnewPgae {
+
+}
+
+.cardnewPgae .cardnewForm {
+    max-width: 500px;
+    margin: 70px auto;
+}
+
+// .container {
+//   width: 500px;
+//   margin: 0 auto;
+// }
+//
+// #login-form {
+//   display: block;
+//   margin: 0 auto;
+// }
+
+.cardnewPgae .cardnewForm_title,
+.cardnewPgae .cardnewForm_parts {
+    // margin-bottom: 30px;
+    margin: 0 auto 30px;
+    width: 500px;
+}
+
+.cardnewForm_parts input,
+.cardnewForm_parts textarea {
+  width: 500px;
+}
+
+.cardnewForm_parts .short_form {
+  width: 160px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.form_title {
+  margin-bottom: 10px;
+}
+
+.submitBtn {
+    background: #29b744;
+    color: #fff;
+    width: 200px;
+    margin: 20px 0 20px;
+    padding: 10px;
+    border-radius: 90px;
+    transition: opacity .5s;
+    cursor: pointer;
+    text-align: center;
 }

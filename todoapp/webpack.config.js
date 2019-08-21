@@ -33,6 +33,10 @@ module.exports = {
       {
         test: /\.pug$/,
         loader: 'pug-plain-loader'
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       }
     ]
   },
@@ -44,12 +48,16 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.json', '*'],
+    extensions: ['.js', '.json', '*',  '.vue'],
     modules: [
       'node_modules',
       path.join(__dirname, SRC, 'javascripts'),
       path.join(__dirname, SRC)
     ],
+    alias: {
+             // vue.js のビルドを指定する
+             vue: 'vue/dist/vue.common.js'
+    }
   },
   plugins: [
     new CompressionPlugin({
